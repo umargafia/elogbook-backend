@@ -5,13 +5,12 @@ import {
   updateUser,
   deleteUser,
   login,
-  getMe,
 } from "../controllers/userController.js";
 import { requireAuth } from "../middleware/authMiddleware.js";
 const userRoute = express.Router();
 
 // get/login elcom
-userRoute.route("/").get(requireAuth, getMe).post(login);
+userRoute.route("/").post(login);
 
 userRoute.route("/allusers").get(requireAuth, getUsers);
 
