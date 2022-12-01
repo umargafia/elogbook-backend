@@ -102,19 +102,6 @@ export const login = asyncHandler(async (req, res) => {
   }
 });
 
-// get me
-export const getMe = asyncHandler(async (req, res) => {
-  const { _id, name, email } = await User.findById(req.user.id);
-
-  res.status(200).json({
-    _id: user._id,
-    email: user.email,
-    name: user.name,
-    role: user.role,
-    regNo: user.regNo,
-  });
-});
-
 //get all users
 export const getUsers = asyncHandler(async (req, res) => {
   const users = await UserModel.find();
